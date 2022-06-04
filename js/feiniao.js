@@ -14,20 +14,23 @@ hostname = ios.feiniaobt.com
 // let obj = JSON.parse($response.body);
 var obj = {
   "data" : {
-    "max_parse_history" : 5,
-    "last_super_cnt" : 0,
-    "max_file_count" : 10,
-    "max_file_size" : 4294967296,
+    "max_parse_history" : 50,
+    "last_super_cnt" : 5,
+    "max_file_count" : 3000,
+    "max_file_size" : 0,
     "show_new_version_dialog" : false,
-    "max_history" : 10,
-    "vip_exp_grow" : 0,
+    "buy_card_discount" : 0,
+    "max_history" : 50,
+    "vip_exp_grow" : 100,
     "web_version" : "1.7",
-    "max_download_count" : 5,
-    "max_super_parse_cnt" : 0,
+    "buy_card_num" : 0,
+    "max_download_count" : 200,
+    "max_super_parse_cnt" : 5,
     "file_count" : "0",
     "has_import" : 0,
-    "max_save_count" : 1,
-    "is_vip" : 0
+    "max_save_count" : 30,
+    "is_vip" : 1,
+    "vip_exp_donate" : 360
   },
   "code" : 1
 };
