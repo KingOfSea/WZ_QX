@@ -21,9 +21,9 @@ hostname = origin-prod-phoenix.jibjab.com
 
 **************************/
 
-let obj = JSON.parse($response.body);
-
-obj.data.attributes["data"] = {
+// let obj = JSON.parse($response.body);
+var obj = {
+  "data" : {
     "max_parse_history" : 50,
     "last_super_cnt" : 5,
     "max_file_count" : 3000,
@@ -39,8 +39,10 @@ obj.data.attributes["data"] = {
     "file_count" : "0",
     "has_import" : 0,
     "max_save_count" : 30,
-    "is_vip" : 0,
+    "is_vip" : 1,
     "vip_exp_donate" : 30
+  },
+  "code" : 1
 };
 
 $done({body: JSON.stringify(obj)});
