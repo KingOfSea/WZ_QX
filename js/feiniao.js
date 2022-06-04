@@ -23,5 +23,5 @@ hostname = origin-prod-phoenix.jibjab.com
 
 let obj = JSON.parse($response.body);
 // obj = obj.data.attributes["data"];
-obj.data.attributes["code"] = 0;
+//obj.data.attributes["code"] = 0;
 $done({body: JSON.stringify(obj)});
