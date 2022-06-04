@@ -1,23 +1,13 @@
 /*
-JibJab 解锁高级功能
+飞鸟下载 解锁vip功能
 
 ***************************
 QuantumultX:
 
 [rewrite_local]
-https:\/\/origin-prod-phoenix\.jibjab\.com\/v1\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/jibjab.js
-
+^https:\/\/ios\.feiniaobt\.com\/wangpan\/get_config url script-response-body https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/feiniao.js
 [mitm]
-hostname = origin-prod-phoenix.jibjab.com
-
-***************************
-Surge4 or Loon:
-
-[Script]
-http-response https:\/\/origin-prod-phoenix\.jibjab\.com\/v1\/user requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/jibjab.js
-
-[MITM]
-hostname = origin-prod-phoenix.jibjab.com
+hostname = ios.feiniaobt.com
 
 **************************/
 
