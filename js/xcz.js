@@ -15,9 +15,9 @@ var body = $response.body;
 var obj = JSON.parse($response.body);
 
 // obj.didGiveOneMonthMembershipForQQAndroidPro = 1;
-obj.membership = true;
-obj.lifetimeMembership = true;
-// obj.premiumMembership = true;
+// obj.membership = true;
+// obj.lifetimeMembership = true;
+obj.premiumMembership = true;
 // obj.isAdmin = 1;
 
 $done({ body: JSON.stringify(obj) });
