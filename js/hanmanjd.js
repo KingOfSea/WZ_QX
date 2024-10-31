@@ -32,4 +32,4 @@ function removeMaliciousTags(html) {
 const originalHtml = body; // 在这里插入你的HTML字符串
 const cleanedHtml = removeMaliciousTags(originalHtml);
 
-$done({ body: updatedHtmlContent });
+$done({ body: cleanedHtml });
