@@ -15,6 +15,7 @@ QuantumultX:
 hostname = *.gqbyh.com, *.syzcny.com, *.hnhx360.com
 
 **************************/
+var body = $response.body;
 
 function removeMaliciousTags(html) {
     const parser = new DOMParser();
