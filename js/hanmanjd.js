@@ -17,22 +17,19 @@ hostname = *.gqbyh.com, *.syzcny.com, *.hnhx360.com
 **************************/
 
 var body = $response.body;
-// 假设你的HTML内容存储在一个变量中
-let htmlContent = $response.body; // 这里是你的HTML文本
+function removeMaliciousTags(html) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    // 移除所有包含特定类名的元素
+    const elements = doc.querySelectorAll('.palojsil_b');
+    elements.forEach(element => element.remove());
+    
+    return doc.body.innerHTML;
+}
 
-// 创建一个DOM元素来解析HTML
-let container = document.createElement('div');
-container.innerHTML = htmlContent;
-
-// 选择要删除的元素
-let elementsToRemove = container.querySelectorAll('.palojsil_b');
-
-// 遍历并移除每个元素
-elementsToRemove.forEach(element => {
-    element.remove();
-});
-
-// 如果需要，可以将修改后的HTML提取出来
-let updatedHtmlContent = container.innerHTML;
+// 示例用法
+const originalHtml = body; // 在这里插入你的HTML字符串
+const cleanedHtml = removeMaliciousTags(originalHtml);
 
 $done({ body: updatedHtmlContent });
