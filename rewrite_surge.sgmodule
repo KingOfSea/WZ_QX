@@ -1,0 +1,47 @@
+#!name=重写脚本集合
+#!desc=功能包含：飞鸟下载、小小影视、墨迹天气、Musi、西窗烛、韩漫基地、不太灵等应用的增强功能
+#!system=ios
+
+[Script]
+# 飞鸟下载解锁vip
+飞鸟下载 = type=http-response, pattern=^https:\/\/ios\.feiniaobt\.com\/wangpan\/get_config, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/feiniao.js
+
+# 小小影视去广告
+小小影视1 = type=http-response, pattern=^https:\/\/.+?\.gqbyh\.com\/getGlobalData, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/xiaoxiaotv.js
+
+小小影视2 = type=http-response, pattern=^https:\/\/.+?\.syzcny\.com\/getGlobalData, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/xiaoxiaotv.js
+
+小小影视3 = type=http-response, pattern=^https:\/\/.+?\.hnhx360\.com\/getGlobalData, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/xiaoxiaotv.js
+
+# 墨迹天气
+墨迹天气VIP = type=http-response, pattern=^https:\/\/psnlz\.api\.moji\.com\/.+?\/user-conf-server\/diamondConf, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/moji.js
+
+# 西窗烛解锁vip
+西窗烛 = type=http-response, pattern=^https:\/\/lchttpapi\.xczim\.com\/.+?\/users\/me, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/xcz.js
+
+# 韩漫基地
+韩漫基地 = type=http-response, pattern=^https:\/\/hanmanjd\.com\/.+?\.html, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/hanmanjd.js
+
+# 不太灵
+不太灵getInfo = type=http-response, pattern=^https?://web5\.mukaku\.com/prod/api/v1/getInfo.*$, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/mukaku-vip-unlock.js
+
+不太灵用户接口 = type=http-response, pattern=^https?://web5\.mukaku\.com/(prod/)?api/(user|auth).*$, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/mukaku-vip-unlock.js
+
+不太灵影视接口 = type=http-response, pattern=^https?://web5\.mukaku\.com/(prod/)?api/(video|movie|mv).*$, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/KingOfSea/WZ_QX/master/js/mukaku-vip-unlock.js
+
+[URL Rewrite]
+# 墨迹天气广告拦截
+^https:\/\/.*adsmind\.ugdtimg\.com - reject
+
+# Musi广告拦截
+^https:\/\/api\.vungle\.com\/api\/v5\/ads - reject
+^https:\/\/.*rayjump\.com\/load - reject
+^https:\/\/.*rayjump\.com\/openapi\/ad\/v3 - reject
+
+# 韩漫基地广告拦截
+^https:\/\/3100gc\.ki980j\.cn - reject
+^https:\/\/7\.31xx2667a\.cc - reject
+^https:\/\/www\.msteyy\.xyz - reject
+
+[MITM]
+hostname = %APPEND% ios.feiniaobt.com, *.gqbyh.com, *.syzcny.com, *.hnhx360.com, adsmind.ugdtimg.com, *.rdt.tfogc.com, api.vungle.com, *.rayjump.com, lchttpapi.xczim.com, psnlz.api.moji.com, 3100gc.ki980j.cn, 7.31xx2667a.cc, www.msteyy.xyz, hanmanjd.com, web5.mukaku.com, *.mukaku.com
